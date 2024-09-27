@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
 type MyEvent struct {
@@ -17,6 +19,6 @@ func HandleRequest(event MyEvent) (string, error) {
 }
 
 func main() {
-	// lambda.Start(HandleRequest)
-	fmt.Println("Hello, World!")
+	lambda.Start(HandleRequest)
+
 } 
