@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+)
+
+type MyEvent struct {
+	Username string `json:"username"`
+}
+
+func HandleRequest(event MyEvent) (string, error) {
+	if event.Username == "" {
+		return "", fmt.Errorf("username is required")
+	}
+
+	return fmt.Sprintf("succesfully processed - %s", event.Username) , nil 
+}
+
+func main() {
+	// lambda.Start(HandleRequest)
+	fmt.Println("Hello, World!")
+} 
